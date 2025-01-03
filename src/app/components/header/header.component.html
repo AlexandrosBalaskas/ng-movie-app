@@ -1,0 +1,25 @@
+<header class="app-header">
+  <div class="container">
+    <h1 class="title">Movie Explorer</h1>
+    <button class="menu-icon" (click)="toggleMenu()">☰</button>
+    <input
+      type="text"
+      placeholder="Search for movies..."
+      class="search-bar"
+      [(ngModel)]="searchQuery"
+      (keydown.enter)="onSearch()"
+    />
+  </div>
+</header>
+<nav class="drawer" [class.open]="isMenuOpen">
+  <ul>
+    <li
+      *ngFor="let category of categories"
+      (click)="selectCategory(category)"
+      (keydown.enter)="selectCategory(category)"
+      tabindex="0"
+    >
+      {{ category.name }}
+    </li>
+  </ul>
+</nav>

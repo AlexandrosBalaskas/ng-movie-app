@@ -1,0 +1,21 @@
+.movie-card {
+  flex: 0 0 auto;
+  width: 150px;
+  text-align: center;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.movie-card img {
+  width: 150px; /* Fixed width */
+  height: 225px; /* Fixed height */
+  object-fit: cover; /* Ensure images fill the area without distortion */
+  border-radius: 8px;
+}
+
+.movie-title {
+  font-size: 1rem;
+  color: white;
+  margin-top: 5px;
+}

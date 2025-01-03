@@ -1,0 +1,28 @@
+.movie-section {
+  margin: 20px;
+  padding: 10px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.movie-list {
+  display: flex;
+  width: 95vw;
+  gap: 15px;
+  overflow-x: scroll;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+.movie-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movie-list::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}

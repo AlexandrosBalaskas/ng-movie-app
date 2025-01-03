@@ -1,0 +1,20 @@
+<!-- pagination.component.html -->
+<div class="pagination">
+  <button
+    (click)="goToPreviousPage()"
+    [disabled]="currentPage === 1"
+    class="pagination-btn"
+  >
+    <span class="material-icons">navigate_before</span> Previous
+  </button>
+
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+
+  <button
+    (click)="goToNextPage()"
+    [disabled]="currentPage === totalPages"
+    class="pagination-btn"
+  >
+    Next <span class="material-icons">navigate_next</span>
+  </button>
+</div>

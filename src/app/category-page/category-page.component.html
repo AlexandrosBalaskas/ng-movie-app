@@ -1,0 +1,17 @@
+<section class="movie-section">
+  <h2 class="section-title">{{ categoryName }}</h2>
+  <!-- Display the current category name -->
+
+  <div class="movie-list">
+    <app-movie-item
+      *ngFor="let movie of movies"
+      [movie]="movie"
+    ></app-movie-item>
+  </div>
+
+  <app-pagination
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    (pageChanged)="goToPage($event)"
+  ></app-pagination>
+</section>

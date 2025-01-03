@@ -1,0 +1,74 @@
+.movie-section {
+  margin: 20px;
+  padding: 10px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+  justify-content: space-between; /* Distribute items evenly with space between */
+  gap: 20px;
+}
+
+.movie-item {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  width: 180px; /* Fixed width */
+  height: 300px; /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.movie-item img {
+  width: 100%;
+  height: 70%; /* Fixed height for images */
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movie-title {
+  color: white;
+  font-size: 1rem;
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-btn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.pagination-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.pagination-btn span.material-icons {
+  margin: 0 5px;
+}

@@ -1,0 +1,21 @@
+<section class="movie-section">
+  <h2 class="section-title">{{ "Search Results for " + query }}</h2>
+  <!-- Display the current category name -->
+
+  <div *ngIf="movies.length === 0" class="no-results-message">
+    No results found for your search.
+  </div>
+
+  <div class="movie-list" *ngIf="movies.length > 0">
+    <app-movie-item
+      *ngFor="let movie of movies"
+      [movie]="movie"
+    ></app-movie-item>
+  </div>
+
+  <app-pagination
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    (pageChanged)="goToPage($event)"
+  ></app-pagination>
+</section>
