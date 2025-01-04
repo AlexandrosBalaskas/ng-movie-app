@@ -35,9 +35,13 @@ export class MovieService {
     );
   }
 
-  getMoviesByCategory(categoryId: number, page: number): Observable<any> {
+  getMoviesByCategory(
+    categoryId: number,
+    page: number,
+    sortBy: string
+  ): Observable<any> {
     return this.http.get(
-      `${this.baseUrl}/discover/movie?api_key=${environment.tmdbApiKey}&with_genres=${categoryId}&page=${page}`
+      `${this.baseUrl}/discover/movie?api_key=${environment.tmdbApiKey}&with_genres=${categoryId}&sort_by=${sortBy}&page=${page}`
     );
   }
 

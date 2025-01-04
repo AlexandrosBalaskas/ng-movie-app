@@ -2,6 +2,23 @@
   <h2 class="section-title">{{ categoryName }}</h2>
   <!-- Display the current category name -->
 
+  <div class="sort-options">
+    <label for="sort-by" class="sort-label">Sort By:</label>
+    <select
+      id="sort-by"
+      [(ngModel)]="selectedSort"
+      (change)="onSortChange($event)"
+      class="custom-dropdown"
+    >
+      <option value="popularity.desc">Popularity (High to Low)</option>
+      <option value="popularity.asc">Popularity (Low to High)</option>
+      <option value="release_date.desc">Release Date (Newest First)</option>
+      <option value="release_date.asc">Release Date (Oldest First)</option>
+      <option value="vote_average.desc">Rating (High to Low)</option>
+      <option value="vote_average.asc">Rating (Low to High)</option>
+    </select>
+  </div>
+
   <div class="movie-list">
     <app-movie-item
       *ngFor="let movie of movies"

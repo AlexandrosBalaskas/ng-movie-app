@@ -72,3 +72,43 @@
 .pagination-btn span.material-icons {
   margin: 0 5px;
 }
+.sort-options {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 20px;
+}
+
+.sort-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.custom-dropdown {
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-family: "Arial", sans-serif;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+.custom-dropdown:focus {
+  border-color: #1e90ff;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
+
+.custom-dropdown option {
+  padding: 10px;
+}
+
+/* Custom hover effect for dropdown */
+.custom-dropdown:hover {
+  border-color: #1e90ff;
+  background-color: #f0f8ff;
+}

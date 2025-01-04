@@ -4,10 +4,11 @@ import { MovieService } from '../services/movie.service';
 import { CommonModule } from '@angular/common';
 import { MovieItemComponent } from '../movie-item/movie-item.component';
 import { PaginationComponent } from '../pagination/pagination.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-category-page',
-  imports: [CommonModule, MovieItemComponent, PaginationComponent],
+  imports: [CommonModule, MovieItemComponent, PaginationComponent, FormsModule],
   templateUrl: './category-page.component.html',
   styleUrl: './category-page.component.css',
 })
@@ -17,6 +18,7 @@ export class CategoryPageComponent {
   totalPages: number = 1;
   categoryId!: number;
   categoryName!: string;
+  selectedSort: string = 'popularity.desc';
 
   constructor(
     private route: ActivatedRoute,
@@ -27,16 +29,17 @@ export class CategoryPageComponent {
     this.route.params.subscribe((params) => {
       console.log(params, 'par');
       this.categoryId = +params['id'];
-      this.fetchMovies();
+      this.selectedSort = 'popularity.desc';
+      this.fetchMovies(this.selectedSort);
     });
     this.route.queryParams.subscribe((params) => {
       this.categoryName = params['name'];
     });
   }
 
-  fetchMovies(): void {
+  fetchMovies(sort: string): void {
     this.movieService
-      .getMoviesByCategory(this.categoryId, this.currentPage)
+      .getMoviesByCategory(this.categoryId, this.currentPage, sort)
       .subscribe((response) => {
         this.movies = response.results;
         this.totalPages = response.total_pages;
@@ -45,6 +48,11 @@ export class CategoryPageComponent {
 
   goToPage(page: number): void {
     this.currentPage = page;
-    this.fetchMovies();
+    this.fetchMovies(this.selectedSort);
+  }
+
+  onSortChange(event: any) {
+    this.selectedSort = event.target.value;
+    this.fetchMovies(this.selectedSort);
   }
 }
