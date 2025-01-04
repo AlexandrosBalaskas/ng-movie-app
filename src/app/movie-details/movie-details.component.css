@@ -66,3 +66,36 @@
   font-size: 17px;
   font-weight: 500;
 }
+.go-back-btn {
+  background-color: transparent;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+.go-back-btn .material-icons {
+  margin-right: 8px;
+  font-size: 1.4rem; /* Slightly larger icon */
+}
+
+.go-back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px); /* Subtle lift on hover */
+  border-color: #ff4081; /* Accent color on hover */
+}
+
+.go-back-btn:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+.go-back-btn:active {
+  transform: translateY(0); /* Click effect, reset the lift */
+}
