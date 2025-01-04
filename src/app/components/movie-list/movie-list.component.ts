@@ -35,7 +35,7 @@ export class MovieListComponent implements OnInit {
 
   fetchUpcomingMovies(): void {
     this.movieService.getUpcomingMovies().subscribe((response) => {
-      this.topRatedMovies = response.results;
+      this.upcomingMovies = response.results;
     });
   }
 }
