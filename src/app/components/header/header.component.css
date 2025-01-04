@@ -1,38 +1,19 @@
+/* App Header */
 .app-header {
   background-color: #1e1e1e;
   color: white;
-  padding: 15px 0;
+  height: 40px;
+  padding: 15px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-
-  .title {
-    font-size: 1.8rem;
-    margin: 0;
-  }
-
-  .search-bar {
-    width: 300px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-}
-.app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1e1e1e;
-  padding: 10px 20px;
-  color: white;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .menu-icon {
@@ -41,6 +22,22 @@
   border: none;
   color: white;
   cursor: pointer;
+  margin-right: 20px;
+}
+
+.app-logo {
+  cursor: pointer;
+  height: 70px;
+  width: auto;
+  margin-right: auto;
+}
+
+.search-bar {
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 /* Drawer Styles */

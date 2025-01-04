@@ -1,7 +1,14 @@
 <header class="app-header">
   <div class="container">
-    <h1 class="title">Movie Explorer</h1>
     <button class="menu-icon" (click)="toggleMenu()">☰</button>
+    <img
+      src="assets/logo.png"
+      alt="App Logo"
+      class="app-logo"
+      (click)="nav()"
+      (keydown.enter)="nav()"
+      tabindex="0"
+    />
     <input
       type="text"
       placeholder="Search for movies..."
@@ -11,7 +18,7 @@
     />
   </div>
 </header>
-<nav class="drawer" [class.open]="isMenuOpen">
+<nav class="drawer" [class.open]="isMenuOpen" (clickOutside)="toggleMenu()">
   <ul>
     <li
       *ngFor="let category of categories"

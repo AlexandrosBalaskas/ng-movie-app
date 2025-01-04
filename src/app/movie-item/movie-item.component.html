@@ -1,4 +1,9 @@
-<div class="movie-card">
+<div
+  class="movie-card"
+  (click)="goToDetails()"
+  (keydown.enter)="goToDetails()"
+  tabindex="0"
+>
   <img
     [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
     alt="{{ movie.title }}"

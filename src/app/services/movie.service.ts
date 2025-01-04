@@ -46,4 +46,16 @@ export class MovieService {
       `${this.baseUrl}/search/movie?api_key=${environment.tmdbApiKey}&query=${query}&page=${page}`
     );
   }
+
+  getMovieDetails(id: string): Observable<any> {
+    return this.http.get(
+      `${this.baseUrl}/movie/${id}?api_key=${environment.tmdbApiKey}`
+    );
+  }
+
+  getMovieTrailer(movieId: string): Observable<any> {
+    return this.http.get(
+      `${this.baseUrl}/movie/${movieId}/videos?api_key=${environment.tmdbApiKey}`
+    );
+  }
 }

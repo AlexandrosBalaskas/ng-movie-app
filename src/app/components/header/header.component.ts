@@ -35,6 +35,10 @@ export class HeaderComponent implements OnInit {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  nav(): void {
+    this.router.navigate(['']);
+  }
+
   selectCategory(category: any): void {
     this.toggleMenu(); // Close the menu when a category is selected
     this.router.navigate(['/category', category.id], {

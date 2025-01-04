@@ -1,0 +1,27 @@
+<div
+  class="backgroundImg"
+  [ngStyle]="{
+    'background-image':
+      'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://image.tmdb.org/t/p/original' +
+      movie.poster_path +
+      ')'
+  }"
+></div>
+<div class="bigBox">
+  <div class="imageBox">
+    <img
+      [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path"
+      alt="image"
+    />
+    <a [href]="trailerUrl" target="_blank"><h1>WATCH TRAILER</h1></a>
+  </div>
+  <div class="desc">
+    <h1>{{ movie.title }}</h1>
+    <h3>{{ movie.release_date }} | {{ movie.runtime }} min | {{ genres }}</h3>
+    <br />
+    <h3>Vote Average: {{ movie.vote_average }}</h3>
+    <h4>THE STORY</h4>
+    <hr />
+    <p>{{ movie.overview }}</p>
+  </div>
+</div>
